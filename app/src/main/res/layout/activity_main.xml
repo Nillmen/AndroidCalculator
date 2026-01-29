@@ -22,7 +22,11 @@
         android:padding="24dp"
         android:text="0"
         android:textColor="#000000"
-        android:textSize="48sp" />
+        android:maxLines="1"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="20sp"
+        app:autoSizeMaxTextSize="48sp"
+        app:autoSizeStepGranularity="2sp" />
 
     <TextView
         android:id="@+id/tvDisplayResult"
@@ -37,59 +41,87 @@
         android:padding="24dp"
         android:text="0"
         android:textColor="#000000"
-        android:textSize="48sp" />
+        android:maxLines="1"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="24sp"
+        app:autoSizeMaxTextSize="48sp"
+        app:autoSizeStepGranularity="2sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="7"
         android:orientation="vertical"
-        android:weightSum="4"> <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:weightSum="4">
-        <Button style="@style/CalcButton" android:id="@+id/btn7" android:text="7" android:layout_weight="1"/>
-        <Button style="@style/CalcButton" android:id="@+id/btn8" android:text="8" android:layout_weight="1"/>
-        <Button style="@style/CalcButton" android:id="@+id/btn9" android:text="9" android:layout_weight="1"/>
-        <Button style="@style/CalcButton" android:id="@+id/btnDiv" android:text="÷" android:layout_weight="1" android:backgroundTint="#FF9800"/>
-    </LinearLayout>
+        android:weightSum="5">
 
+        <!-- Hàng 1 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:weightSum="4">
+            android:weightSum="5">
+            <Button style="@style/CalcButton" android:id="@+id/btnSqRoot" android:text="√" android:layout_weight="1" android:backgroundTint="#9E9E9E"/>
+            <Button style="@style/CalcButton" android:id="@+id/btnSquare" android:text="x²" android:layout_weight="1" android:backgroundTint="#9E9E9E"/>
+            <Button style="@style/CalcButton" android:id="@+id/btnPi" android:text="π" android:layout_weight="1" android:backgroundTint="#9E9E9E"/>
+            <Button style="@style/CalcButton" android:id="@+id/btnPercent" android:text="%" android:layout_weight="1" android:backgroundTint="#9E9E9E"/>
+            <Button style="@style/CalcButton" android:id="@+id/btnClear" android:text="C" android:layout_weight="1" android:backgroundTint="#F44336"/>
+        </LinearLayout>
+
+        <!-- Hàng 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="5">
+            <Button style="@style/CalcButton" android:id="@+id/btn7" android:text="7" android:layout_weight="1"/>
+            <Button style="@style/CalcButton" android:id="@+id/btn8" android:text="8" android:layout_weight="1"/>
+            <Button style="@style/CalcButton" android:id="@+id/btn9" android:text="9" android:layout_weight="1"/>
+            <Button style="@style/CalcButton" android:id="@+id/btnDiv" android:text="÷" android:layout_weight="1" android:backgroundTint="#FF9800"/>
+            <Button style="@style/CalcButton" android:id="@+id/btnDelete" android:text="⌫" android:layout_weight="1" android:backgroundTint="#757575"/>
+        </LinearLayout>
+
+        <!-- Hàng 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="5">
             <Button style="@style/CalcButton" android:id="@+id/btn4" android:text="4" android:layout_weight="1"/>
             <Button style="@style/CalcButton" android:id="@+id/btn5" android:text="5" android:layout_weight="1"/>
             <Button style="@style/CalcButton" android:id="@+id/btn6" android:text="6" android:layout_weight="1"/>
             <Button style="@style/CalcButton" android:id="@+id/btnMul" android:text="×" android:layout_weight="1" android:backgroundTint="#FF9800"/>
+            <Button style="@style/CalcButton" android:id="@+id/btnOpenBracket" android:text="(" android:layout_weight="1" android:backgroundTint="#757575"/>
         </LinearLayout>
 
+        <!-- Hàng 4 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:weightSum="4">
+            android:weightSum="5">
             <Button style="@style/CalcButton" android:id="@+id/btn1" android:text="1" android:layout_weight="1"/>
             <Button style="@style/CalcButton" android:id="@+id/btn2" android:text="2" android:layout_weight="1"/>
             <Button style="@style/CalcButton" android:id="@+id/btn3" android:text="3" android:layout_weight="1"/>
             <Button style="@style/CalcButton" android:id="@+id/btnSub" android:text="−" android:layout_weight="1" android:backgroundTint="#FF9800"/>
+            <Button style="@style/CalcButton" android:id="@+id/btnCloseBracket" android:text=")" android:layout_weight="1" android:backgroundTint="#757575"/>
         </LinearLayout>
 
+        <!-- Hàng 5 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:weightSum="4">
+            android:weightSum="5">
             <Button style="@style/CalcButton" android:id="@+id/btn0" android:text="0" android:layout_weight="1"/>
-            <Button style="@style/CalcButton" android:id="@+id/btnClear" android:text="C" android:layout_weight="1" android:backgroundTint="#F44336"/>
-            <Button style="@style/CalcButton" android:id="@+id/btnEqual" android:text="=" android:layout_weight="1" android:backgroundTint="#4CAF50"/>
+            <Button style="@style/CalcButton" android:id="@+id/btnSign" android:text="+/-" android:layout_weight="1" android:backgroundTint="#757575"/>
+            <Button style="@style/CalcButton" android:id="@+id/btnDot" android:text="." android:layout_weight="1"/>
             <Button style="@style/CalcButton" android:id="@+id/btnAdd" android:text="+" android:layout_weight="1" android:backgroundTint="#FF9800"/>
+            <Button style="@style/CalcButton" android:id="@+id/btnEqual" android:text="=" android:layout_weight="1" android:backgroundTint="#4CAF50"/>
         </LinearLayout>
 
     </LinearLayout>
